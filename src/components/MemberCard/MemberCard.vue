@@ -1,12 +1,12 @@
 <template>
   <v-card
     class="mx-auto"
-    max-width="250px"
+    max-width="18%"
   >
     <v-img
       class="align-end"
       :class="blackName ? '' : 'white--text'"
-      height="250px"
+      aspect-ratio="1"
       :src="picPath"
     >
       <v-card-title class="biseau"><span>{{ fullName }}</span></v-card-title>
@@ -54,6 +54,8 @@
 </template>
 
 <script>
+import './style.css'
+
 export default {
   name: 'MemberCard',
   data: () => ({
@@ -68,41 +70,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-  .v-card--reveal {
-    bottom: 0;
-    opacity: 1 !important;
-    position: absolute;
-    width: 100%;
-  }
-
-  .biseau {
-    height: 40px;
-    background: orange;
-    display: inline-block;
-    padding: 0;
-    margin-bottom: .3em;
-    position: relative;
-  }
-  .biseau::before {
-    content:"";
-    position:absolute;
-    left:-20px;
-    width:0;
-    height:0;
-    border-style:solid;
-    border-color:transparent transparent orange transparent;
-    border-width:0px 0px 40px 20px;
-  }
-  .biseau::after {
-    content:"";
-    position:absolute;
-    right:-20px;
-    width:0;
-    height:0;
-    border-style:solid;
-    border-color:orange transparent transparent  transparent;
-    border-width:40px 20px 0px 0px;
-  }
-</style>
