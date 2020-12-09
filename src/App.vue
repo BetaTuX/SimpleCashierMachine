@@ -81,11 +81,8 @@ export default {
   data: () => ({
     links: [
       {title: 'Home', route: '/'},
-      {title: 'Customers', route: '/customers'},
-      {title: 'Suppliers', route: '/suppliers'},
-      {title: 'Stock', route: '/stock'},
-      {title: 'Orders', route: '/orders'},
-      {title: 'Exit', route: '/exit'}
+      {title: 'Products', route: '/products'},
+      {title: 'Suppliers', route: '/suppliers'}
     ]
   })
 }

@@ -25,13 +25,13 @@ export default {
       fullDescription: 'Hello this is a very long description, I swear this will look very cool',
       fullName: 'Hugo',
       brief: '4th year EPITECH students actually studying abroad',
-      picPath: 'https://scontent-dub4-1.xx.fbcdn.net/v/t31.0-8/21273109_1555760257817477_8118439480669980989_o.jpg?_nc_cat=103&ccb=2&_nc_sid=09cbfe&_nc_ohc=5F8t5BOsVW4AX9LO4vK&_nc_ht=scontent-dub4-1.xx&oh=c87b15d2d0d7487f6e7b554e94607208&oe=5FE4266C'
+      picPath: 'https://scontent-dub4-1.xx.fbcdn.net/v/t31.0-8/26233322_1070054756464760_2977736168420797368_o.jpg?_nc_cat=101&ccb=2&_nc_sid=09cbfe&_nc_ohc=iC2jKa_U8XkAX9fmATG&_nc_ht=scontent-dub4-1.xx&oh=0a20d8d82b0adfa5c1b4e7776270bea2&oe=5FE48D27'
     },
     {
       fullDescription: 'Hello this is a very long description, I swear this will look very cool',
       fullName: 'Thibaut',
       brief: '4th year EPITECH students actually studying abroad',
-      picPath: 'https://scontent-dub4-1.xx.fbcdn.net/v/t31.0-8/26233322_1070054756464760_2977736168420797368_o.jpg?_nc_cat=101&ccb=2&_nc_sid=09cbfe&_nc_ohc=iC2jKa_U8XkAX9fmATG&_nc_ht=scontent-dub4-1.xx&oh=0a20d8d82b0adfa5c1b4e7776270bea2&oe=5FE48D27'
+      picPath: 'https://scontent-dub4-1.xx.fbcdn.net/v/t31.0-8/21273109_1555760257817477_8118439480669980989_o.jpg?_nc_cat=103&ccb=2&_nc_sid=09cbfe&_nc_ohc=5F8t5BOsVW4AX9LO4vK&_nc_ht=scontent-dub4-1.xx&oh=c87b15d2d0d7487f6e7b554e94607208&oe=5FE4266C'
     }
   ]
 }

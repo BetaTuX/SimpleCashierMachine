@@ -1,0 +1,4 @@
+class Supplier {
+  name;
+  brief;
+}

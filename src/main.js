@@ -5,6 +5,7 @@ import vuetify from './plugins/vuetify'
 import App from './App'
 import router from './router'
 import shared from './shared'
+import store from './store'
 
 Vue.config.productionTip = false
 
@@ -22,5 +23,6 @@ new Vue({
   vuetify,
   router,
   components: { App },
+  store,
   template: '<App/>'
 })
