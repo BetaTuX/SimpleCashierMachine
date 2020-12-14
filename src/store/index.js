@@ -8,7 +8,8 @@ export default new Vuex.Store({
     customers: JSON.parse(localStorage.getItem('customers')) || [],
     orders: JSON.parse(localStorage.getItem('orders')) || [],
     suppliers: JSON.parse(localStorage.getItem('suppliers')) || [],
-    products: JSON.parse(localStorage.getItem('products')) || []
+    products: JSON.parse(localStorage.getItem('products')) || [],
+    cart: JSON.parse(localStorage.getItem('cart')) || []
   },
   mutations: {
     insertSupplier: function (state, name) {
@@ -26,7 +27,10 @@ export default new Vuex.Store({
         id: (last) ? last.id + 1 : 0,
         name: payload.name,
         quantity: payload.quantity,
-        expirationDate: payload.expirationDate
+        price: payload.price,
+        VAT: payload.VAT,
+        expirationDate: payload.expirationDate,
+        type: payload.type
       })
       localStorage.setItem('products', JSON.stringify(state.products))
     },
@@ -39,6 +43,20 @@ export default new Vuex.Store({
         state.products.filter(value => value.id === payload.id)[0].quantity = payload.quantity
         localStorage.setItem('products', JSON.stringify(state.products))
       }
+    },
+    saveCart: function (state, payload) {
+      localStorage.setItem('cart', JSON.stringify(state.cart))
+    },
+    clearCart: function (state, payload) {
+      state.cart.forEach(val => {
+        state.products.filter(value => value.id === val.id)[0].quantity++
+      })
+      state.cart = []
+      localStorage.setItem('cart', JSON.stringify(state.cart))
+    },
+    validateCart: function (state, payload) {
+      state.cart = []
+      localStorage.setItem('cart', JSON.stringify(state.cart))
     }
   },
   getters: {},

@@ -3,14 +3,41 @@
     <template v-slot:default>
       <thead>
       <tr>
-        <th v-for="item in headers" :key="item">{{ item }}</th>
+        <th>Name</th>
+        <th>
+          <v-select
+            :items="availableTypes"
+            v-model="filterType"
+            attach=""
+            chips
+            multiple
+            solo flat
+            :append-icon="icons.mdiChevronDown"
+            single-line
+            small-chips
+            dense
+            label="Type"
+            :menu-props="{ bottom: true, offsetY: true, closeOnClick: true }"
+            class="type-select"
+          />
+        </th>
+        <th>Price per unit</th>
+        <th>Quantity</th>
+        <th>Expiration Date</th>
+        <th><slot name="action-fab"/></th>
       </tr>
-      <slot name="action-fab"/>
       </thead>
       <tbody>
       <tr v-for="item in products" :key="item.id">
         <td>{{ item.name }}</td>
-        <td>{{ item.quantity }}</td>
+        <td>
+          <v-chip>{{ item.type }}</v-chip>
+        </td>
+        <td>{{ (item.price * item.VAT).toFixed(2) }} €</td>
+        <td class="d-flex flex-row justify-end align-center">
+          {{ item.quantity }}
+          <ModifyProductForm :product-id="item.id"/>
+        </td>
         <td>{{ item.expirationDate }}</td>
         <td class="action-cell">
           <v-btn
@@ -22,7 +49,6 @@
               {{ icons.mdiCart }}
             </v-icon>
           </v-btn>
-          <ModifyProductForm :product-id="item.id"/>
         </td>
       </tr>
       </tbody>
@@ -31,25 +57,23 @@
 </template>
 
 <script>
-import {mdiCart} from '@mdi/js'
+import {mdiCart, mdiFormDropdown, mdiChevronDown} from '@mdi/js'
 import ModifyProductForm from '../ModifyProductForm/index'
+import consts from '../../consts'
 
 export default {
   name: 'ProductList',
   components: {ModifyProductForm},
   data: () => ({
-    icons: {mdiCart},
-    headers: [
-      'Name',
-      'Quantity',
-      'Expiration Date'
-    ]
+    icons: {mdiCart, mdiFormDropdown, mdiChevronDown},
+    availableTypes: consts.itemTypes,
+    filterType: []
   }),
   computed: {
     products: function () {
-      console.log(this.$store)
       let list = this.$store.state.products
-      list = list.filter(value => new Date(value.expirationDate) >= new Date())
+      if (this.filterType.length !== 0) { list = list.filter(value => this.filterType.includes(value.type)) }
+      list = list.filter(value => new Date(value.expirationDate) >= new Date()).sort((act, next) => (act.type < next.type) ? -1 : 1)
       return list
     }
   },
@@ -64,6 +88,8 @@ export default {
         // TODO: display error
       } else {
         this.$store.commit('buyProduct', productId)
+        this.$store.state.cart.push(list[0])
+        this.$store.commit('saveCart')
       }
     }
   }

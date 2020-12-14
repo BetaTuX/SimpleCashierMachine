@@ -71,18 +71,21 @@
           </v-col>
         </v-row>
       </v-container>
+      <CartSheet></CartSheet>
     </v-main>
   </v-app>
 </template>
 
 <script>
+import CartSheet from './components/CartSheet'
+
 export default {
   name: 'App',
+  components: {CartSheet},
   data: () => ({
     links: [
       {title: 'Home', route: '/'},
-      {title: 'Products', route: '/products'},
-      {title: 'Suppliers', route: '/suppliers'}
+      {title: 'Products', route: '/products'}
     ]
   })
 }

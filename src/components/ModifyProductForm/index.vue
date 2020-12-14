@@ -6,15 +6,14 @@
     >
       <template v-slot:activator="{ on, attrs }">
         <v-btn
+          icon
           small
-          outlined
-          class="mx-2"
+          class="pa-0 mx-2"
           v-bind="attrs"
           v-on="on"
           @click.end="quantity = item().quantity"
         >
-          Modify
-          <v-icon>
+          <v-icon small class="pa-0">
             {{ icons.mdiPen }}
           </v-icon>
         </v-btn>

@@ -7,7 +7,7 @@ export default {
       fullDescription: 'Hello this is a very long description, I swear this will look very cool',
       fullName: 'Argann',
       brief: '4th year EPITECH students actually studying abroad',
-      picPath: 'https://media-exp1.licdn.com/dms/image/C5603AQH9kJFm1-tJoQ/profile-displayphoto-shrink_200_200/0?e=1609977600&v=beta&t=JqKIRixsM9jOQv6RiXkTRFlZSQmHKMCCSFCBbOajf5k'
+      picPath: 'https://scontent-dub4-1.cdninstagram.com/v/t51.2885-19/s150x150/121640356_184174476504009_1568043695300412704_n.jpg?_nc_ht=scontent-dub4-1.cdninstagram.com&_nc_ohc=VvV_fhMSFe4AX_CLz_M&tp=1&oh=d8e7eba55240f54edcde9408ee865725&oe=6001F528'
     },
     {
       fullDescription: 'Hello this is a very long description, I swear this will look very cool',

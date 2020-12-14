@@ -1,7 +1,10 @@
 <template>
-  <v-flex class="d-flex flex-row flex-wrap justify-start align-start align-content-start wrapper pt-3">
-    <MemberCard v-for="dev in $globalData.devs" :key="dev.fullName" :full-name="dev.fullName" :full-description="dev.fullDescription" :brief="dev.brief" :pic-path="dev.picPath"/>
-  </v-flex>
+  <div>
+    <h1>The Team</h1>
+    <v-flex class="d-flex flex-row flex-wrap justify-start align-start align-content-start wrapper pt-3">
+      <MemberCard v-for="dev in $globalData.devs" :key="dev.fullName" :full-name="dev.fullName" :full-description="dev.fullDescription" :brief="dev.brief" :pic-path="dev.picPath"/>
+    </v-flex>
+  </div>
 </template>
 <script>
 import MemberCard from '../components/MemberCard/MemberCard'

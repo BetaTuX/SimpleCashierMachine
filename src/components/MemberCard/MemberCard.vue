@@ -19,7 +19,7 @@
     <v-card-actions
       v-if="fullDescription">
       <v-btn
-        color="orange"
+        color="#2196f3"
         text
         @click="reveal = true"
       >
@@ -42,7 +42,7 @@
         <v-card-actions class="pt-0">
           <v-btn
             text
-            color="orange accent-4"
+            color="#2196f3 accent-4"
             @click="reveal = false"
           >
             Close
