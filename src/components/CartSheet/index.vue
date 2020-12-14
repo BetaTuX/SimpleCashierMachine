@@ -72,7 +72,6 @@
                 :append-icon="icons.mdiCurrencyEur"
                 @change.stop="snackbar = false"
               />
-              <v-btn @click.stop="showSnack()" color="primary"><v-icon left>{{ icons.mdiCalculator }}</v-icon>Process</v-btn>
               <v-dialog
                 v-model="dialog"
                 persistent
@@ -111,23 +110,6 @@
         <p v-else>Your cart is empty :(</p>
       </v-sheet>
     </v-bottom-sheet>
-    <v-snackbar
-      v-model="snackbar"
-      timeout="0"
-    >
-      <span v-if="amountToReturn < 0"> Customer didn't give enough !</span>
-      <span v-else>Please return {{ test = convertAmountToBillStack(amountToReturn)[0] }} € to the customer</span>
-      <template v-slot:action="{ attrs }">
-        <v-btn
-          color="primary"
-          text
-          v-bind="attrs"
-          @click="snackbar = false"
-        >
-          Close
-        </v-btn>
-      </template>
-    </v-snackbar>
   </div>
 </template>
 <script type="application/javascript">
