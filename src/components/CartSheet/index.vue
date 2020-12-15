@@ -152,12 +152,12 @@ export default {
     },
     cartTotalPrice: function () {
       let total = 0.0
-      this.$store.state.cart.map(v => v.price).forEach(nb => { total += parseFloat(nb) })
+      this.$store.state.cart.map(v => v.price * (1 + (v.VAT / 100.0))).forEach(nb => { total += parseFloat(nb) })
       return total.toFixed(2)
     },
     amountToReturn: function () {
       let total = 0.0
-      this.$store.state.cart.map(v => v.price).forEach(nb => { total += parseFloat(nb) })
+      this.$store.state.cart.map(v => v.price * (1 + (v.VAT / 100.0))).forEach(nb => { total += parseFloat(nb) })
       total = total.toFixed(2)
       return (this.cash - total).toFixed(2)
     }

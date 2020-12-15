@@ -33,7 +33,7 @@
         <td>
           <v-chip>{{ item.type }}</v-chip>
         </td>
-        <td>{{ (item.price * item.VAT).toFixed(2) }} €</td>
+        <td>{{ (item.price * (1 + (item.VAT / 100.0))).toFixed(2) }} €</td>
         <td class="d-flex flex-row justify-end align-center">
           {{ item.quantity }}
           <ModifyProductForm :product-id="item.id"/>
